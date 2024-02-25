@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Flutter App'),
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: [
               Tab(text: 'Home'),
               Tab(text: 'Portfolio'),
