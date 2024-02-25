@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'header_component.dart';
 
+
 void main() {
   runApp(MyApp());
 }
@@ -39,6 +40,7 @@ class MyHomePage extends StatelessWidget {
             HomeTab(),
             PortfolioTab(),
             AboutTab(),
+            
           ],
         ),
       ),
