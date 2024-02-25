@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'header_component.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,16 +21,29 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter App'),
-      ),
-      body: Center(
-        child: Text(
-          'Welcome to my Flutter App!',
-          style: TextStyle(fontSize: 24.0),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter App'),
+          bottom: TabBar(
+            tabs: [
+              Tab(text: 'Home'),
+              Tab(text: 'Portfolio'),
+              Tab(text: 'About'),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            HomeTab(),
+            PortfolioTab(),
+            AboutTab(),
+          ],
         ),
       ),
     );
   }
 }
+
+
