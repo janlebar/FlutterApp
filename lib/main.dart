@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'header_component.dart';
+import 'gallery.dart';
 
 
 void main() {
@@ -40,6 +41,7 @@ class MyHomePage extends StatelessWidget {
             HomeTab(),
             PortfolioTab(),
             AboutTab(),
+
             
           ],
         ),
@@ -49,3 +51,11 @@ class MyHomePage extends StatelessWidget {
 }
 
 
+class PortfolioTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Gallery(), // Placing the Gallery widget in the center
+    );
+  }
+}
