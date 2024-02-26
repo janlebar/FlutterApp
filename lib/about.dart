@@ -4,7 +4,12 @@ import 'package:url_launcher/url_launcher.dart';
 class About extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
-  About({super.key});
+  // Controllers for form fields
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
+
+  About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +29,7 @@ class About extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextFormField(
+                      controller: _nameController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your name';
@@ -35,6 +41,7 @@ class About extends StatelessWidget {
                       ),
                     ),
                     TextFormField(
+                      controller: _emailController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your email address';
@@ -48,6 +55,7 @@ class About extends StatelessWidget {
                       ),
                     ),
                     TextFormField(
+                      controller: _messageController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter a message';
@@ -64,7 +72,21 @@ class About extends StatelessWidget {
                       onPressed: () {
                         if (_formKey.currentState != null &&
                             _formKey.currentState!.validate()) {
-                          _launchEmail();
+                          final name = _nameController.text;
+                          final email = _emailController.text;
+                          final message = _messageController.text;
+
+                          // Construct the mailto link (adjust as needed)
+                          final mailtoLink = Uri(
+                            scheme: 'mailto',
+                            path: 'jst5321@gmail.com', // Replace with recipient's email
+                            queryParameters: {
+                              'subject': 'Contact Form Submission',
+                              'body': '$name\n$email\n\n$message', // Combine form data
+                            },
+                          ).toString();
+
+                          launchUrl(Uri.parse(mailtoLink));
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -81,23 +103,5 @@ class About extends StatelessWidget {
       ),
     );
   }
-
-  _launchEmail() async {
-    final Uri emailLaunchUri = Uri(
-      scheme: 'mailto',
-      path: 'jst5321@gmail.com',
-      queryParameters: {
-        'subject': 'Contact Form Submission',
-        // You can add more parameters here like body, cc, bcc, etc.
-      },
-    );
-
-    if (await canLaunchUrl(emailLaunchUri.toString() as Uri)) {
-      await launchUrl(emailLaunchUri.toString() as Uri);
-    } else {
-      throw 'Could not launch ${emailLaunchUri.toString()}';
-    }
-  }
 }
-
 
