@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'header_component.dart';
 import 'gallery.dart';
-
+import 'about.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,6 +56,15 @@ class PortfolioTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Gallery(), // Placing the Gallery widget in the center
+    );
+  }
+}
+
+class AboutTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: About(), // Placing the Gallery widget in the center
     );
   }
 }
