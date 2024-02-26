@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417547818643",
+    "project_id": "janlebar",
+    "storage_bucket": "janlebar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417547818643:android:62e7c4755ab7e04a019f66",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnHtjDunPxm3Wr_C_EaGSOai72kH_IR1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
