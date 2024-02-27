@@ -9,7 +9,7 @@ class Gallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // You can adjust the number of grid columns here
         crossAxisSpacing: 5.0,
         mainAxisSpacing: 5.0,

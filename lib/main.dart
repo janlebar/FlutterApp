@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'header_component.dart'; // Assuming these files exist
 import 'gallery.dart';
 import 'about.dart';
+import 'caurosel.dart';
 
 void main() {
   runApp(MyApp());
@@ -80,6 +81,13 @@ class PortfolioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(child: Gallery());
+  }
+}
+
+class HomeTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Carousel());
   }
 }
 
