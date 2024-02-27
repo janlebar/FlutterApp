@@ -3,6 +3,7 @@ import 'header_component.dart'; // Assuming these files exist
 import 'gallery.dart';
 import 'about.dart';
 import 'caurosel.dart';
+import 'footer.dart';
 
 void main() {
   runApp(MyApp());
@@ -72,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
             AboutTab(),
           ],
         ),
+       
       ),
     );
   }
@@ -97,3 +99,4 @@ class AboutTab extends StatelessWidget {
     return Center(child: About());
   }
 }
+

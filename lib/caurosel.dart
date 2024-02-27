@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class Carousel extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/A.jpg',
+    'assets/B.jpg',  
     // Add more image paths as needed
   ];
 
@@ -12,8 +13,8 @@ class Carousel extends StatelessWidget {
     return CarouselSlider.builder(
       itemCount: imagePaths.length,
       options: CarouselOptions(
-        aspectRatio: 16 / 9,
-        viewportFraction: 0.8,
+        aspectRatio: 9 / 16,
+        viewportFraction: 0.2,
         initialPage: 0,
         enableInfiniteScroll: true,
         reverse: false,

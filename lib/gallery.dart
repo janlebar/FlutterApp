@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Gallery extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/A.jpg',
+    'assets/B.jpg',
     // Add more image paths as needed
   ];
 
